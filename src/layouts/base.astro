@@ -6,7 +6,7 @@ import Head, { type HeadProps } from "../components/head.astro";
 
 const {
   title,
-  image = `${Astro.site}/og.png`,
+  image = new URL("/og.png", Astro.site),
   desc = "purrfection.xyz - purrfect oss code",
   author = "purrfection",
 } = Astro.props;
