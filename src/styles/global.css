@@ -1,1 +1,9 @@
 @import "tailwindcss";
+
+@theme {
+  --color-accent: #ff006e;
+  --color-background: #141414;
+  --color-foreground: #fff;
+
+  --font-sans: "Pixelify Sans Variable", system-ui;
+}

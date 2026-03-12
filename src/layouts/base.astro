@@ -1,0 +1,24 @@
+---
+import "@fontsource-variable/pixelify-sans";
+import "../styles/global.css";
+
+import Head, { type HeadProps } from "../components/head.astro";
+
+const {
+  title,
+  image = new URL(Astro.url.pathname + "/og.png", Astro.site).href,
+  desc = "purrfection.xyz - purrfect oss code",
+  author = "purrfection",
+} = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <Head author={author} desc={desc} image={image} title={title} />
+  </head>
+  <body class="bg-background text-foreground">
+    <main class="max-w-md mx-auto py-8">
+      <slot />
+    </main>
+  </body>
+</html>

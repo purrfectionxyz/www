@@ -1,17 +1,43 @@
 ---
+import Base from "../layouts/base.astro";
 
+const socials: { n: string; l: string }[] = [
+  {
+    n: "github",
+    l: "https://github.com/purrfectionxyz",
+  },
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Base>
+  <h1 class="text-4xl text-accent font-semibold">
+    <a href="/">purrfection.xyz</a>
+  </h1>
+  <p class="pt-2">
+    hello. i use purrfection as a place to put my oss projects i dont want under
+    my own account. kthxbye
+  </p>
+
+  <hr class="border-accent my-4" />
+
+  <h2 class="text-2xl text-accent">socials</h2>
+  <ul>
+    {
+      socials.map((link) => (
+        <li>
+          <a
+            href={link.l}
+            class="underline hover:bg-accent hover:text-background"
+          >
+            {link.n}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+
+  <hr class="border-accent my-4" />
+
+  <h2 class="text-2xl text-accent">88x31</h2><small>(pls hotlink!)</small>
+  <img src="/88x31.gif" alt="purrfection.xyz 88x31 button" />
+</Base>
